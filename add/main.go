@@ -9,7 +9,7 @@ import (
 )
 
 type Response struct {
-	Result int64 `json:"result"`
+	Result int `json:"result"`
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -23,8 +23,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// TODO: Some more error handling in here would be nice
-	a, _ := strconv.ParseInt(params[2], 0, 64)
-	b, _ := strconv.ParseInt(params[3], 0, 64)
+	a, _ := strconv.Atoi(params[2])
+	b, _ := strconv.Atoi(params[3])
 	res, _ := json.Marshal(Response{Result: a + b})
 
 	w.WriteHeader(http.StatusOK)
