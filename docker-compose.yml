@@ -22,3 +22,8 @@ services:
     build: ./mul
     links:
       - addition
+
+  division:
+    build: ./div
+    links:
+      - multiplication

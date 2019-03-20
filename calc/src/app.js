@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 const additionHost = 'addition:8080';
 const subtractionHost = 'subtraction:8080';
 const multiplicationHost = 'multiplication:5000';
+const divisionHost = 'division:5000';
 
 app.use(express.json());
 
@@ -49,8 +50,14 @@ app.get('/mul/:a/:b', (req, res) => {
         }));
 });
 
-app.get('/div/:a/:b', (req, res) => res.send({
-    result: parseInt(req.params.a) / parseInt(req.params.b)
-}));
+app.get('/div/:a/:b', (req, res) => {
+    const a = parseInt(req.params.a);
+    const b = parseInt(req.params.b);
+
+    axios.get(`http://${divisionHost}/div/${a}/${b}`)
+        .then(response => res.send({
+            result: response.data.result,
+        }));
+});
 
 app.listen(port, () => console.log(`calc is listening on port ${port}!`));
