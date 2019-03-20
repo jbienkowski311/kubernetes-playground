@@ -4,6 +4,7 @@
   "description": "`calc` microservice provides a simple calculator API. It is written in NodeJS.",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.4"
   },
   "devDependencies": {},

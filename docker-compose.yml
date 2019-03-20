@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  calculator:
+    build: ./calc
+    links:
+      - addition
+      - subtraction
+    ports:
+      - "3000:3000"
+
+  addition:
+    build: ./add
+
+  subtraction:
+    build: ./sub
+    links:
+      - addition
