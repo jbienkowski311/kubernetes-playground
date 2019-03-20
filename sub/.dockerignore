@@ -1,0 +1,4 @@
+# ignore binary
+sub
+# ignore dependencies
+vendor/
