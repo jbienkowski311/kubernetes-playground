@@ -6,6 +6,7 @@ services:
     links:
       - addition
       - subtraction
+      - multiplication
     ports:
       - "3000:3000"
 
@@ -14,5 +15,10 @@ services:
 
   subtraction:
     build: ./sub
+    links:
+      - addition
+
+  multiplication:
+    build: ./mul
     links:
       - addition
