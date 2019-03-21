@@ -3,10 +3,10 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const additionHost = 'addition:8080';
-const subtractionHost = 'subtraction:8080';
-const multiplicationHost = 'multiplication:5000';
-const divisionHost = 'division:5000';
+const additionHost = process.env.ADD_HOST || 'addition:8080';
+const subtractionHost = process.env.SUB_HOST || 'subtraction:8080';
+const multiplicationHost = process.env.MUL_HOST || 'multiplication:5000';
+const divisionHost = process.env.DIV_HOST || 'division:5000';
 
 app.use(express.json());
 

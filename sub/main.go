@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -26,7 +27,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// TODO: Some more error handling in here would be nice
 	a, _ := strconv.Atoi(params[2])
 	b, _ := strconv.Atoi(params[3])
-	url := fmt.Sprintf("http://%s/add/%d/%d", "addition:8080", a, -1*b)
+	addHost := os.Getenv("ADD_HOST")
+	if addHost == "" {
+		addHost = "addition:8080"
+	}
+	url := fmt.Sprintf("http://%s/add/%d/%d", addHost, a, -1*b)
 	resp, _ := http.Get(url)
 
 	var result map[string]int
