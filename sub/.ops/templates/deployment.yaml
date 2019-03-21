@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sub-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sub
+    spec:
+      containers:
+      - name: sub
+        image: jbienkowski311/sub:0.2.1
+        imagePullPolicy: Never
+        env:
+        - name: ADD_HOST
+          value: add-service
+        ports:
+        - containerPort: 8080

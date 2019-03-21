@@ -1,0 +1,6 @@
+name: div microservice
+version: 1.0.0
+description: div REST API microservice
+maintainers:
+  - name: Jakub Bieńkowski
+    email: jbienkowski311@gmail.com

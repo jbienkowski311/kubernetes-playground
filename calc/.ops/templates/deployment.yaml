@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: calc-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: calc
+    spec:
+      containers:
+      - name: calc
+        image: jbienkowski311/calc:0.2.0
+        imagePullPolicy: Never
+        env:
+        - name: ADD_HOST
+          value: add-service
+        - name: SUB_HOST
+          value: sub-service
+        - name: MUL_HOST
+          value: mul-service
+        - name: DIV_HOST
+          value: div-service
+        ports:
+        - containerPort: 3000

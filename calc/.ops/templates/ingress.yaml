@@ -1,0 +1,8 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: calc-ingress
+spec:
+  backend:
+    serviceName: calc-service
+    servicePort: 80

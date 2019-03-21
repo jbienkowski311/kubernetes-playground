@@ -1,0 +1,6 @@
+name: mul microservice
+version: 1.0.0
+description: mul REST API microservice
+maintainers:
+  - name: Jakub Bieńkowski
+    email: jbienkowski311@gmail.com

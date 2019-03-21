@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mul-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mul
+    spec:
+      containers:
+      - name: mul
+        image: jbienkowski311/mul:0.2.2
+        imagePullPolicy: Never
+        env:
+        - name: ADD_HOST
+          value: add-service
+        ports:
+        - containerPort: 5000

@@ -1,0 +1,6 @@
+name: calc microservice
+version: 1.0.0
+description: calc REST API microservice
+maintainers:
+  - name: Jakub Bieńkowski
+    email: jbienkowski311@gmail.com
