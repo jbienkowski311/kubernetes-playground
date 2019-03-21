@@ -3,6 +3,7 @@ version: '3'
 services:
   calculator:
     build: ./calc
+    image: jbienkowski311/calc:1.0.0
     links:
       - addition
       - subtraction
@@ -12,18 +13,22 @@ services:
 
   addition:
     build: ./add
+    image: jbienkowski311/add:1.0.0
 
   subtraction:
     build: ./sub
+    image: jbienkowski311/sub:1.0.0
     links:
       - addition
 
   multiplication:
     build: ./mul
+    image: jbienkowski311/mul:1.0.0
     links:
       - addition
 
   division:
     build: ./div
+    image: jbienkowski311/div:1.0.0
     links:
       - multiplication
