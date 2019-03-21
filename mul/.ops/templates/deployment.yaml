@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: mul
-        image: jbienkowski311/mul:0.2.2
+        image: jbienkowski311/mul:1.0.0
         imagePullPolicy: Never
         env:
         - name: ADD_HOST

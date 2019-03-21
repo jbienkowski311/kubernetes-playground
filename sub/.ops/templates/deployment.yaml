@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: sub
-        image: jbienkowski311/sub:0.2.1
+        image: jbienkowski311/sub:1.0.0
         imagePullPolicy: Never
         env:
         - name: ADD_HOST
